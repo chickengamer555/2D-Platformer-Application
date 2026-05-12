@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://mmn13oosal4a"]
+
+[ext_resource type="Script" uid="uid://del87xs78031w" path="res://scripts/kill_zone.gd" id="1_kill"]
+[ext_resource type="Script" uid="uid://cnd5lswl8icii" path="res://scripts/goal.gd" id="2_goal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(1000, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(40, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledge"]
+size = Vector2(200, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goal"]
+size = Vector2(80, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kill"]
+size = Vector2(4000, 200)
+
+[node name="LevelDemo" type="Node2D" unique_id=1685476052]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1936072883]
+position = Vector2(0, 280)
+
+[node name="ColorRect" type="ColorRect" parent="Floor" unique_id=1763524768]
+offset_left = -500.0
+offset_top = -20.0
+offset_right = 500.0
+offset_bottom = 20.0
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1614796490]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=639753225]
+position = Vector2(380, 60)
+
+[node name="ColorRect" type="ColorRect" parent="WallRight" unique_id=896336371]
+offset_left = -20.0
+offset_top = -300.0
+offset_right = 20.0
+offset_bottom = 300.0
+color = Color(0.3, 0.5, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=2105910472]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="GoalLedge" type="StaticBody2D" parent="." unique_id=1404264332]
+position = Vector2(480, -200)
+
+[node name="ColorRect" type="ColorRect" parent="GoalLedge" unique_id=100827482]
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalLedge" unique_id=1741099426]
+shape = SubResource("RectangleShape2D_ledge")
+
+[node name="GoalArea" type="Area2D" parent="." unique_id=348101258]
+position = Vector2(480, -260)
+script = ExtResource("2_goal")
+
+[node name="ColorRect" type="ColorRect" parent="GoalArea" unique_id=1547864227]
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalArea" unique_id=568350598]
+shape = SubResource("RectangleShape2D_goal")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1682254792 groups=["spawn_point"]]
+position = Vector2(-400, 220)
+
+[node name="KillZone" type="Area2D" parent="." unique_id=1671437345]
+position = Vector2(0, 600)
+script = ExtResource("1_kill")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=1498333003]
+shape = SubResource("RectangleShape2D_kill")

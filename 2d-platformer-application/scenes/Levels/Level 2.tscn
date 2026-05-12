@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dm7jc78xbi13g"]
+
+[ext_resource type="Texture2D" uid="uid://bidg730lhr4p2" path="res://Assets/Backrounds/Hasui Kawase – Souvenirs of My Travels, 2nd Series Lake Kamo under the Moonlight (Sado).jpg" id="1_d2urg"]
+[ext_resource type="PackedScene" uid="uid://b3yp1kxg5wq2t" path="res://scenes/Resources/Start.tscn" id="2_4bqgd"]
+[ext_resource type="PackedScene" uid="uid://bxqm3u4imijur" path="res://scenes/Resources/Kill zones.tscn" id="3_4bqgd"]
+[ext_resource type="PackedScene" uid="uid://cuy0e6v3qaupf" path="res://scenes/Resources/Wide tile.tscn" id="4_h15i8"]
+[ext_resource type="PackedScene" uid="uid://4fej54gpf24o" path="res://scenes/Enemys/spinner.tscn" id="5_2x4of"]
+[ext_resource type="PackedScene" uid="uid://cl1rq5jw48iac" path="res://scenes/Resources/Tall tile.tscn" id="6_x268y"]
+[ext_resource type="PackedScene" uid="uid://brhjarm3fs6u7" path="res://scenes/Resources/Basic tile.tscn" id="7_6e6as"]
+[ext_resource type="PackedScene" uid="uid://bxhek7tvvrjj5" path="res://scenes/Resources/Moving tile.tscn" id="7_7gkme"]
+[ext_resource type="PackedScene" uid="uid://bpuxvwiwwdaks" path="res://scenes/Enemys/spitter.tscn" id="7_vxhfg"]
+[ext_resource type="PackedScene" uid="uid://hvchdslohikx" path="res://scenes/Enemys/flyer.tscn" id="8_7gkme"]
+[ext_resource type="PackedScene" uid="uid://cf4hwjp7ne8mq" path="res://scenes/Resources/End.tscn" id="9_nvbol"]
+
+[node name="Level2" type="Node2D" unique_id=1093500011]
+
+[node name="Backround" type="Sprite2D" parent="." unique_id=1983479198]
+position = Vector2(1026, 682)
+scale = Vector2(2, 2)
+texture = ExtResource("1_d2urg")
+
+[node name="Start" parent="." unique_id=1831891608 instance=ExtResource("2_4bqgd")]
+position = Vector2(249, 312)
+
+[node name="KillZones" parent="." unique_id=1477893255 instance=ExtResource("3_4bqgd")]
+position = Vector2(1043, 662)
+
+[node name="Tiles" type="Node2D" parent="." unique_id=1393407048]
+
+[node name="WideTile" parent="Tiles" unique_id=500888010 instance=ExtResource("4_h15i8")]
+position = Vector2(195, 378)
+
+[node name="WideTile2" parent="Tiles" unique_id=618197654 instance=ExtResource("4_h15i8")]
+position = Vector2(452.00003, 213)
+rotation = 1.5707964
+
+[node name="Spinner" parent="Tiles/WideTile2" unique_id=15422443 instance=ExtResource("5_2x4of")]
+position = Vector2(-56.666687, 220.00012)
+rotation = -1.5707964
+scale = Vector2(3.3333333, 3.3333333)
+speed = 300.0
+orbit_margin = 75.0
+spin_speed_deg = 500.0
+
+[node name="WideTile3" parent="Tiles" unique_id=1400944860 instance=ExtResource("4_h15i8")]
+position = Vector2(485, 548)
+
+[node name="WideTile4" parent="Tiles" unique_id=339640389 instance=ExtResource("6_x268y")]
+position = Vector2(695, 417)
+
+[node name="WideTile5" parent="Tiles" unique_id=429490498 instance=ExtResource("4_h15i8")]
+position = Vector2(586, 85)
+scale = Vector2(0.2, 0.2)
+
+[node name="WideTile6" parent="Tiles" unique_id=1732733921 instance=ExtResource("4_h15i8")]
+position = Vector2(605, 365)
+rotation = 1.5707964
+
+[node name="WideTile7" parent="Tiles" unique_id=1884466605 instance=ExtResource("6_x268y")]
+position = Vector2(271, 722)
+
+[node name="WideTile8" parent="Tiles" unique_id=1951592362 instance=ExtResource("7_6e6as")]
+position = Vector2(1043, 224)
+rotation = 1.5707964
+
+[node name="WideTile9" parent="Tiles" unique_id=1085901223 instance=ExtResource("4_h15i8")]
+position = Vector2(808, 712)
+
+[node name="WideTile10" parent="Tiles" unique_id=1283080271 instance=ExtResource("7_6e6as")]
+position = Vector2(280, 992.00006)
+
+[node name="WideTile11" parent="Tiles" unique_id=1743530286 instance=ExtResource("7_7gkme")]
+position = Vector2(1184, 514)
+scale = Vector2(0.2, 0.2)
+
+[node name="WideTile12" parent="Tiles" unique_id=1224821084 instance=ExtResource("4_h15i8")]
+position = Vector2(1608, 480)
+
+[node name="WideTile13" parent="Tiles" unique_id=1245413165 instance=ExtResource("4_h15i8")]
+position = Vector2(1384, 209)
+rotation = 1.5707964
+
+[node name="Spinner" parent="Tiles/WideTile13" unique_id=776678334 instance=ExtResource("5_2x4of")]
+position = Vector2(6.9938224e-06, 160)
+scale = Vector2(2, 2)
+speed = 500.0
+orbit_margin = 30.0
+spin_speed_deg = 750.0
+
+[node name="WideTile14" parent="Tiles" unique_id=1747622299 instance=ExtResource("6_x268y")]
+position = Vector2(1792, 264)
+
+[node name="End" parent="Tiles" unique_id=1589740666 instance=ExtResource("9_nvbol")]
+position = Vector2(1832, 108)
+
+[node name="Enemys" type="Node2D" parent="." unique_id=1039497652]
+
+[node name="Spitter" parent="Enemys" unique_id=735423938 instance=ExtResource("7_vxhfg")]
+position = Vector2(211, 474)
+fire_interval = 1.75
+
+[node name="Flyer" parent="Enemys" unique_id=1237561535 instance=ExtResource("8_7gkme")]
+position = Vector2(808, 280)
+scale = Vector2(1.5, 1.5)
+
+[node name="Spitter2" parent="Enemys" unique_id=1577368489 instance=ExtResource("7_vxhfg")]
+position = Vector2(952, 632)
+fire_interval = 3.0
+direction = 1
+projectile_speed = 175.0
+
+[node name="Flyer2" parent="Enemys" unique_id=483797840 instance=ExtResource("8_7gkme")]
+position = Vector2(1376, 464)
+
+[node name="Flyer3" parent="Enemys" unique_id=627976062 instance=ExtResource("8_7gkme")]
+position = Vector2(1608, 160)
+direction = 1
+distance = 50.0
+speed = 200.0

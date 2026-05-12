@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://4fej54gpf24o"]
+
+[ext_resource type="Script" uid="uid://cpornlx36kw15" path="res://scripts/enemy_spinner.gd" id="1_spinner"]
+[ext_resource type="Texture2D" uid="uid://bg35rqlcxgxhg" path="res://Assets/Enemys/11003935594_9487fccd03_o.jpg" id="2_tex"]
+[ext_resource type="Shader" path="res://scenes/Enemys/circle_crop.gdshader" id="3_shader"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spinner"]
+radius = 32.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_spinner"]
+shader = ExtResource("3_shader")
+
+[node name="Spinner" type="Area2D" unique_id=15422443 groups=["enemy"]]
+script = ExtResource("1_spinner")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=728830297]
+material = SubResource("ShaderMaterial_spinner")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2121612296]
+shape = SubResource("CircleShape2D_spinner")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cw7p4nvl5jb2x"]
+
+[ext_resource type="PackedScene" uid="uid://c0ofonrwmj5tt" path="res://scenes/Levels/Level 1.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://crtgy4xwqp1aj" path="res://scenes/player.tscn" id="3_player"]
+[ext_resource type="Script" uid="uid://coqsm54s1v266" path="res://scripts/camera_follow.gd" id="4_camera"]
+[ext_resource type="Script" uid="uid://wtjaxiv8elg4" path="res://scripts/main.gd" id="5_main"]
+
+[node name="Main" type="Node2D" unique_id=214532137]
+script = ExtResource("5_main")
+starter_level = ExtResource("2_jyhfs")
+
+[node name="Player" parent="." unique_id=274368999 instance=ExtResource("3_player")]
+position = Vector2(-400, 220)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=690908607]
+script = ExtResource("4_camera")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://hvchdslohikx"]
+
+[ext_resource type="Script" uid="uid://cv2si841s6anv" path="res://scripts/enemy_flyer.gd" id="1_flyer"]
+[ext_resource type="Texture2D" uid="uid://dalhpiuvpvd" path="res://Assets/Enemys/11003961256_c48d92e89c_o.jpg" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flyer"]
+size = Vector2(64, 64)
+
+[node name="Flyer" type="Area2D" unique_id=1237561535 groups=["enemy"]]
+script = ExtResource("1_flyer")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=861617727]
+position = Vector2(0, -9.536743e-07)
+scale = Vector2(0.2, 0.27586204)
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1919968665]
+shape = SubResource("RectangleShape2D_flyer")

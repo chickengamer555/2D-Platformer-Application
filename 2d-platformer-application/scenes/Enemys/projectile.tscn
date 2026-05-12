@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bofm678q183am"]
+
+[ext_resource type="Script" uid="uid://c5t562bab2xd" path="res://scripts/projectile.gd" id="1_proj"]
+[ext_resource type="Texture2D" uid="uid://eep5i2pc677h" path="res://Assets/Enemys/14763705761_21a236e0f2_o.jpg" id="2_v7mlr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s02eq"]
+size = Vector2(50, 26)
+
+[node name="Projectile" type="Area2D" unique_id=39000078 groups=["enemy_projectile"]]
+script = ExtResource("1_proj")
+
+[node name="1476370576121a236e0f2O" type="Sprite2D" parent="." unique_id=1950607458]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_v7mlr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1477202893]
+shape = SubResource("RectangleShape2D_s02eq")
+
+[node name="LifetimeTimer" type="Timer" parent="." unique_id=1991404082]
+wait_time = 3.0
+one_shot = true
+autostart = true

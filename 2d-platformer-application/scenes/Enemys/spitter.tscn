@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bpuxvwiwwdaks"]
+
+[ext_resource type="Script" uid="uid://bys7ke0syh0ti" path="res://scripts/enemy_spitter.gd" id="1_spitter"]
+[ext_resource type="Texture2D" uid="uid://dme8w6ry45hrl" path="res://Assets/Enemys/14566635270_16e6be3777_o.jpg" id="2_tex"]
+[ext_resource type="PackedScene" uid="uid://bofm678q183am" path="res://scenes/Enemys/projectile.tscn" id="3_proj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spitter"]
+size = Vector2(79, 96)
+
+[node name="Spitter" type="StaticBody2D" unique_id=735423938 groups=["enemy"]]
+script = ExtResource("1_spitter")
+projectile_scene = ExtResource("3_proj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1832337797]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557903240]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_spitter")
+
+[node name="FireTimer" type="Timer" parent="." unique_id=1341155509]
+wait_time = 1.5
+autostart = true

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxhek7tvvrjj5"]
+
+[ext_resource type="Texture2D" uid="uid://culn2fi66bca4" path="res://Assets/Tiles/14565966530_2d5dcdbed0_o.jpg" id="1_0qaw7"]
+[ext_resource type="Script" path="res://scripts/moving_tile.gd" id="2_moving"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q5b5"]
+size = Vector2(1026.6666, 107.73239)
+
+[node name="WideTile" type="StaticBody2D" unique_id=500888010]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("2_moving")
+
+[node name="11095678186Be13c1Fbf3O" type="Sprite2D" parent="." unique_id=172145007]
+texture = ExtResource("1_0qaw7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917865299]
+position = Vector2(1.4901161e-05, 0)
+scale = Vector2(1, 5.7550006)
+shape = SubResource("RectangleShape2D_5q5b5")

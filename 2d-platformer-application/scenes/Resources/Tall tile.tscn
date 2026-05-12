@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cl1rq5jw48iac"]
+
+[ext_resource type="Texture2D" uid="uid://dm7tpcifimma8" path="res://Assets/Tiles/21084852498_37dd97f63c_o.jpg" id="1_bsqgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q5b5"]
+size = Vector2(313.3333, 69.50477)
+
+[node name="WideTile" type="StaticBody2D" unique_id=500888010]
+scale = Vector2(0.3, 0.3)
+
+[node name="11095678186Be13c1Fbf3O" type="Sprite2D" parent="." unique_id=172145007]
+texture = ExtResource("1_bsqgw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=917865299]
+position = Vector2(0, 9.636084e-06)
+scale = Vector2(1, 5.7550006)
+shape = SubResource("RectangleShape2D_5q5b5")

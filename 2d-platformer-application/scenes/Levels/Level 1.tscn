@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c0ofonrwmj5tt"]
+
+[ext_resource type="Texture2D" uid="uid://4d83h0fvo25q" path="res://Assets/Backrounds/Hasui Kawase – Lake Teganuma.jpg" id="1_2esoj"]
+[ext_resource type="PackedScene" uid="uid://bxqm3u4imijur" path="res://scenes/Resources/Kill zones.tscn" id="2_1r4ax"]
+[ext_resource type="PackedScene" path="res://scenes/Resources/Start.tscn" id="2_2kdxr"]
+[ext_resource type="PackedScene" uid="uid://cuy0e6v3qaupf" path="res://scenes/Resources/Wide tile.tscn" id="3_vj6it"]
+[ext_resource type="PackedScene" uid="uid://cl1rq5jw48iac" path="res://scenes/Resources/Tall tile.tscn" id="5_h8v3o"]
+[ext_resource type="PackedScene" uid="uid://brhjarm3fs6u7" path="res://scenes/Resources/Basic tile.tscn" id="6_hyu7u"]
+[ext_resource type="PackedScene" uid="uid://bxhek7tvvrjj5" path="res://scenes/Resources/Moving tile.tscn" id="7_hyu7u"]
+[ext_resource type="PackedScene" path="res://scenes/Resources/End.tscn" id="8_hispy"]
+[ext_resource type="PackedScene" uid="uid://dm7jc78xbi13g" path="res://scenes/Levels/Level 2.tscn" id="9_t5k8b"]
+
+[node name="Level1" type="Node2D" unique_id=1965441261]
+
+[node name="Backround" type="Sprite2D" parent="." unique_id=1532885117]
+position = Vector2(1026, 682)
+scale = Vector2(2, 2)
+texture = ExtResource("1_2esoj")
+
+[node name="Start" parent="." unique_id=822813483 instance=ExtResource("2_2kdxr")]
+position = Vector2(145, 882)
+
+[node name="KillZones" parent="." unique_id=632226786 instance=ExtResource("2_1r4ax")]
+position = Vector2(1043, 662)
+
+[node name="Label" type="Label" parent="." unique_id=234167731]
+offset_left = 133.0
+offset_top = 797.0
+offset_right = 295.0
+offset_bottom = 846.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+text = "A-D + Space to move 
+Q-E to rotate"
+
+[node name="Tiles" type="Node2D" parent="." unique_id=862228524]
+
+[node name="WideTile" parent="Tiles" unique_id=500888010 instance=ExtResource("3_vj6it")]
+position = Vector2(276, 936)
+
+[node name="WideTile2" parent="Tiles" unique_id=1177602710 instance=ExtResource("5_h8v3o")]
+position = Vector2(515, 806)
+
+[node name="WideTile3" parent="Tiles" unique_id=1611854522 instance=ExtResource("5_h8v3o")]
+position = Vector2(521, 550)
+
+[node name="WideTile4" parent="Tiles" unique_id=1234490605 instance=ExtResource("6_hyu7u")]
+position = Vector2(747, 348)
+
+[node name="WideTile5" parent="Tiles" unique_id=433591492 instance=ExtResource("7_hyu7u")]
+position = Vector2(1032, 249)
+scale = Vector2(0.2, 0.2)
+direction = 0
+distance = 300.0
+speed = 40.0
+
+[node name="WideTile6" parent="Tiles" unique_id=1146587685 instance=ExtResource("3_vj6it")]
+position = Vector2(1304, 424.00003)
+
+[node name="WideTile7" parent="Tiles" unique_id=344100033 instance=ExtResource("7_hyu7u")]
+position = Vector2(1704.0001, 270)
+direction = 0
+
+[node name="End" parent="Tiles" unique_id=613709003 instance=ExtResource("8_hispy")]
+position = Vector2(1694, 608)
+scale = Vector2(2, 2)
+next_level = ExtResource("9_t5k8b")
+
+[node name="WideTile8" parent="Tiles" unique_id=2030592628 instance=ExtResource("3_vj6it")]
+position = Vector2(1154, 632)
+rotation = 1.5707964
